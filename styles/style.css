@@ -2,4 +2,84 @@
 
 .page {
   /* сохраните в разметке и стилях класс page у тега body. Он удобен, чтобы составлять селекторы для разных цветовых тем. */
+  inline-size: 100%;
+  padding-inline-start: 10px;
+  padding-inline-end: 10px;
+}
+
+/*.content_section {
+  padding: 0 var(--padding-section, 10px);
+}*/
+
+.header {
+  position: relative;
+  block-size: 100vh;
+  min-block-size: 668px;
+  display: grid;
+  grid-template-columns: 1fr; /*minmax(375px, 1024px);*/
+  grid-template-rows: 1fr min-content 1fr;
+  align-items: center;
+}
+
+.decorated-zone {
+  padding-block-start: 10px;
+  padding-block-end: 10px;
+}
+
+.corner {
+  position: absolute;
+  top: 10px;
+  right: 9px;
+  display: flex;
+  align-items: center;
+  text-transform: uppercase;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 139%;
+  text-align: center;
+  color: #ff0070;
+}
+
+.corner::after {
+  content: '';
+  display: block;
+  width: 9px;
+  height: 9px;
+  border-radius: 100%;
+  background-color: #ff0070;
+  box-shadow: 0 0 4px 2px #ff0070;
+  margin-left: 10px;
+}
+
+.header__theme-menu {
+  justify-self: end;
+  
+  /*margin-block-start: 65px;
+  margin-block-end: 65px;*/
+}
+
+.header__theme-menu-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.header__title {
+  font-weight: bold;
+  font-size: 116px;
+  line-height: 83%;
+  color: #db00ff;
+}
+
+.header__text-block {
+  /*margin-block-start: 65px;
+  margin-block-end: 65px;*/
+}
+
+.title-decor {
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 130%;
+  color: #000028;  
+  background: #ff0070;
 }

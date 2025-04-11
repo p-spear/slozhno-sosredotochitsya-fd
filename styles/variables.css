@@ -5,23 +5,23 @@
 :root {
   --font-family: 'IBM Plex mono', 'sans-serif';
   --text-size: 18px;
-  --bg-image-theme: url('../images/cover-image-dark.png');
-  --bg-main-color: #000028;
-  --accent-color: #ff0070;
-  --content-text-color: #f1b2ce;
-  --nav-color: #ff0070;
-  --hover-collor: rgba(255, 0, 112, 0.4);
-  --title-color: #db00ff;
-  --title-shadow-color: #ff0070;
   --title-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
-  --subtitle-color: #000028;
   --header-padding: 10px;
   --content-padding: 10px;
   --footer-padding: 10px;
   --main-margin: 40px;
   --section-gap: 50px;
   --galery-gap: 10px;
-
+  --bg-image-theme: url('../images/cover-image-dark.png');
+  --bg-main-color: #000028;
+  --accent-color: #ff0070;
+  --content-title-color: #ff0070;
+  --content-text-color: #f1b2ce;
+  --nav-color: #ff0070;
+  --hover-collor: rgba(255, 0, 112, 0.4);
+  --title-color: #db00ff;
+  --title-shadow-color: #ff0070;
+  --subtitle-color: #000028;
 }
 
 @media (768px <= width) {
@@ -33,5 +33,5 @@
     --section-gap: 80px;
     --galery-gap: 20px;
   }
-
 }
+

@@ -51,7 +51,7 @@
   border-inline-start: 1px solid var(--nav-color);
 }
 
-.corner {
+.record {
   position: absolute;
   inset-block-start: var(--header-padding);
   inset-inline-end: 10px;
@@ -65,7 +65,7 @@
   color: #ff0070;
 }
 
-.corner::after {
+.record::after {
   content: '';
   display: block;
   inline-size: 9px;
@@ -157,7 +157,7 @@
   font-weight: 700;
   font-size: 18px;
   line-height: 130%;
-  color: var(--accent-color);
+  color: var(--content-title-color);
 }
 
 .content__block-list {
@@ -285,10 +285,6 @@
   .gallery__tape {
     grid-column: 1;
     grid-row: 2 / 4;
-  }
-
-  .gallery__books {
-
   }
 
   .gallery__street {

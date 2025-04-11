@@ -3,8 +3,8 @@
 .page {
   /* сохраните в разметке и стилях класс page у тега body. Он удобен, чтобы составлять селекторы для разных цветовых тем. */
   inline-size: 100%;
-  display: flex;
-  flex-direction: column;
+  /*display: flex;
+  flex-direction: column;*/
   padding-inline-start: var(--content-padding);
   padding-inline-end: var(--content-padding);
   background: var(--bg-main-color);
@@ -86,10 +86,6 @@
   gap: 10px;
 }
 
-/*.header__theme-menu-item {
-
-}*/
-
 .header__theme-menu-button {
   min-inline-size: 70px;
   min-block-size: 26px;
@@ -154,7 +150,6 @@
 
 .content_section {
   display: grid;
- /* grid-template-columns: repeat(3, 1fr);*/
   gap: 20px;
 }
 
@@ -168,10 +163,6 @@
 .content__block-list {
   display: grid;
   gap: 20px;
-}
-
-.content__block-why {
-  
 }
 
 .content__information {
@@ -204,16 +195,8 @@
   border: 1px solid var(--content-text-color);
 }
 
-.content__block-what {
-  
-}
-
 .content__subtitle {
   font-weight: 400;
-}
-
-.content__block-how {
-  
 }
 
 .gallery {
@@ -248,8 +231,7 @@
   text-shadow: 2px 2px 0 var(--title-shadow-color);
 }
 
-/*@media (768px <= width < 1024px) */
-@media (768px <= width) {
+@media (width >= 768px) {
   .header {
     grid-template-columns: 1fr 1fr;
   }
@@ -312,5 +294,20 @@
   .gallery__street {
     grid-column: 2 / 4;
     grid-row: 3;
+  }
+}
+
+@media (width >= 1024px) {
+  .header__theme-menu {
+    justify-self: center;
+    align-self: self-start;
+  }
+  
+  .header__theme-menu-list {
+    flex-direction: row;
+  }
+  
+  .content__block-what {
+    grid-template-columns: 1fr 1fr 1fr;
   }
 }

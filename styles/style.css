@@ -2,27 +2,23 @@
 
 .page {
   /* сохраните в разметке и стилях класс page у тега body. Он удобен, чтобы составлять селекторы для разных цветовых тем. */
-  inline-size: 100%;
-  /*display: flex;
-  flex-direction: column;*/
-  padding-inline-start: var(--content-padding);
-  padding-inline-end: var(--content-padding);
   background: var(--bg-main-color);
-  background-image: var(--bg-image-theme, '../images/cover-image.png');
+  background-image: var(--bg-image-theme, url('../images/cover-image.png'));
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
   background-attachment: fixed;
+  inline-size: 100%;
 }
 
 .header {
-  block-size: 100vh;
   display: grid;
   grid-template-rows: 1fr min-content 1fr;
   align-items: center;
-  padding-block-start: var(--header-padding);
-  padding-block-end: var(--header-padding);
   margin-block-end: var(--main-margin);
+  padding: var(--content-padding);
+  block-size: 100vh;
+  min-height: 668px;
 }
 
 .decorated-zone {
@@ -32,48 +28,48 @@
 .decorated-zone::before {
   content: '';
   position: absolute;
+  border-inline-end: 1px solid var(--nav-color);
+  border-block-start: 1px solid var(--nav-color);
   inset-block-start: var(--content-padding);
-  inset-inline-end: 0px;
+  inset-inline-end: var(--content-padding);
   inline-size: 25px;
   block-size: 25px;
-  border-block-start: 1px solid var(--nav-color);
-  border-inline-end: 1px solid var(--nav-color);
 }
 
 .decorated-zone::after {
   content: '';
   position: absolute;
+  border-inline-start: 1px solid var(--nav-color);
+  border-block-end: 1px solid var(--nav-color);
   inset-block-end: var(--content-padding);
-  inset-inline-start: 0px;
+  inset-inline-start: var(--content-padding);
   inline-size: 25px;
   block-size: 25px;
-  border-block-end: 1px solid var(--nav-color);
-  border-inline-start: 1px solid var(--nav-color);
 }
 
 .record {
   position: absolute;
-  inset-block-start: var(--header-padding);
-  inset-inline-end: 10px;
   display: flex;
   align-items: center;
-  text-transform: uppercase;
+  color: #ff0070;
   font-weight: 400;
   font-size: 18px;
   line-height: 139%;
   text-align: center;
-  color: #ff0070;
+  text-transform: uppercase;
+  inset-block-start: var(--content-padding);
+  inset-inline-end: calc(9px + var(--content-padding));
 }
 
 .record::after {
   content: '';
   display: block;
+  margin-inline-start: 10px;
+  border-radius: 100%;
+  box-shadow: 0 0 4px 2px #ff0070;
+  background-color: #ff0070;
   inline-size: 9px;
   block-size: 9px;
-  border-radius: 100%;
-  background-color: #ff0070;
-  box-shadow: 0 0 4px 2px #ff0070;
-  margin-inline-start: 10px;
 }
 
 .header__theme-menu {
@@ -87,18 +83,18 @@
 }
 
 .header__theme-menu-button {
-  min-inline-size: 70px;
-  min-block-size: 26px;
+  border: none;
+  padding-block-end: 4px;
   color: var(--nav-color);
   font-weight: 400;
   font-size: 18px;
-  text-align: center;
   line-height: 100%;
-  background-color: transparent;
+  text-align: center;
   text-transform: lowercase;
-  border: none;
+  background-color: transparent;
   cursor: pointer;
-  padding-block-end: 4px;
+  min-inline-size: 70px;
+  min-block-size: 26px;
 }
 
 .header__theme-menu-button:hover {
@@ -110,20 +106,20 @@
 }
 
 .header__theme-menu-button:focus-visible {
-  outline: none;
   border-bottom: 1px solid var(--nav-color);
+  outline: none;
 }
 
 .header__theme-menu-button_active {
   border: 1px solid var(--nav-color);
-  pointer-events: none
+  pointer-events: none;
 }
 
 .title {
+  color: var(--title-color);
   font-weight: 700;
   font-size: var(--title-size);
   line-height: 83%;
-  color: var(--title-color);
 }
 
 .header__title {
@@ -135,10 +131,10 @@
 }
 
 .title-decor {
+  color: var(--subtitle-color);
   font-weight: bold;
   font-size: 18px;
-  line-height: 130%;
-  color: var(--subtitle-color);  
+  line-height: 130%;  
   background: var(--accent-color);
 }
 
@@ -148,16 +144,17 @@
   gap: var(--section-gap);
 }
 
-.content_section {
+.content-section {
   display: grid;
   gap: 20px;
+  padding-inline: var(--content-padding);
 }
 
 .content__title {
+  color: var(--content-title-color);
   font-weight: 700;
   font-size: 18px;
   line-height: 130%;
-  color: var(--content-title-color);
 }
 
 .content__block-list {
@@ -172,15 +169,15 @@
 }
 
 .content__text {
+  color: var(--content-text-color);
   font-weight: 400;
   font-size: var(--text-size);
   line-height: 130%;
-  color: var(--content-text-color);
 }
 
 .text-link {
-  text-shadow: 2px 2px 0 var(--accent-color);
   text-decoration: none;
+  text-shadow: 2px 2px 0 var(--accent-color);
 }
 
 .text-link:hover {
@@ -218,13 +215,13 @@
 }
 
 .footer {
-  block-size: 100vh;
   display: grid;
-  align-items: center;
   justify-items: center;
-  padding-block-start: var(--footer-padding);
-  padding-block-end: var(--footer-padding);
+  align-items: center;
   margin-block-start: var(--main-margin);
+  padding: var(--content-padding);
+  block-size: 100vh;
+  min-height: 668px;
 }
 
 .footer__title {
@@ -234,6 +231,7 @@
 @media (width >= 768px) {
   .header {
     grid-template-columns: 1fr 1fr;
+    min-height: 1024px;
   }
 
   .header__theme-menu {
@@ -242,9 +240,9 @@
   }
 
   .header__title {
-    margin-inline-start: -20px;
     grid-column: 1 / 3;
     grid-row: 2 /3;
+    margin-inline-start: -20px;
   }
 
   .header__text-block {
@@ -252,8 +250,8 @@
     grid-row: 3;
   }
 
-  .content_section {
-    grid-template-columns: repeat(3, 1fr);
+  .content-section {
+    grid-template-columns: minmax(236px, 1fr) 1fr 1fr;
   }
 
   .content__block-why {
@@ -291,9 +289,17 @@
     grid-column: 2 / 4;
     grid-row: 3;
   }
+
+  .footer {
+    min-height: 1024px;
+  }
 }
 
 @media (width >= 1024px) {
+  .header {
+    min-height: 768px;
+  }
+  
   .header__theme-menu {
     justify-self: center;
     align-self: self-start;
@@ -305,5 +311,9 @@
   
   .content__block-what {
     grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  .footer {
+    min-height: 768px;
   }
 }

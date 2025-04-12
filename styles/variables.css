@@ -6,9 +6,7 @@
   --font-family: 'IBM Plex mono', 'sans-serif';
   --text-size: 18px;
   --title-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
-  --header-padding: 10px;
   --content-padding: 10px;
-  --footer-padding: 10px;
   --main-margin: 40px;
   --section-gap: 50px;
   --galery-gap: 10px;
@@ -26,7 +24,6 @@
 
 @media (768px <= width) {
   :root {
-    --header-padding: 20px;
     --content-padding: 20px;
     --title-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
     --main-margin: 60px;
